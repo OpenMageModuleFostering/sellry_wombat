@@ -1,0 +1,65 @@
+<?php
+/*
+ * Wombat Integration
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * Wombat
+ *
+ * @category   Sellry
+ * @package    Sellry_Wombat
+ * @copyright  Copyright (c) 2014 Sellry (http://sellry.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Michael Bower <sales@sellry.com>
+ */
+?>
+<style>
+    .sellry-notice {padding:15px 10px 10px 20px; border:1px solid #ccc; background:#f9fcec; margin:0 0 10px;}
+    .sellry-notice .logo {width:155px; float:left; margin:0 10px 0 0;}
+    .sellry-notice .wombat-logo {float:right;width:100px;}
+    .sellry-notice .notice {float:left;}
+    .sellry-notice .notice h4, .sellry-notice .notice em {color:#6e6e6e; }
+    .sellry-notice .notice span, strong {color:#a09991;}
+    .sellry-notice .notice span,
+    .sellry-notice .notice strong,
+    .sellry-notice .notice a {line-height:20px;}
+</style>
+<div class='sellry-notice'>
+    <div class="logo">
+        <a href="<?php echo $this->getSellryUrl() ?>" target="_new"><img src="<?php echo $this->getLogoImage() ?>" /></a>
+    </div>
+    <div class="notice">
+        <div class="wombat-logo">
+            <a href="https://wombat.co/" onclick="trackOutboundLink('https://wombat.co/'); return false" target="_new"><img src="http://sellry.com/magento-extensions/wombat-logo.png" width="100"></a>
+        </div>
+        <h4>
+            <?php echo $this->getMainHeading() ?>
+        </h4>
+        <?php if($this->getLatestVersion() && $this->getModuleVersion() != $this->getLatestVersion()): ?>
+            <span><?php echo $this->__('Version: <strong>%s</strong> (out of date; <a href="%s">Download an updated version.</a>)', $this->getModuleVersion(), $this->getLatestDownloadUrl()) ?></span>
+        <?php else: ?>
+            <span><?php echo $this->__('Version: <strong>%s</strong>', $this->getModuleVersion()) ?></span>
+        <?php endif; ?>
+        <?php if(!$this->isConnected()): ?>
+            <br/>
+            <?php echo $this->__("<strong>You're not connected to Wombat yet.</strong> <a href='%s' target='_new' onclick='trackOutboundLink(\'https://wombat.co/user/sign_up\'); return false'>Get a free trial.</a>", 'https://wombat.co/user/sign_up'); ?>
+        <?php endif; ?>
+        <h4><a href="<?php echo $this->getDocumentationUrl() ?>" target="_new"><?php echo $this->__('Support Documentation') ?></a> | <a href="<?php echo $this->getHelpUrl() ?>" target="_new"><?php echo $this->__('Need some Magento Help?') ?></a></h4>
+        <em><?php echo $this->__('This extension pushes data to Wombat. To pull data into Magento, <a href="%s">setup flows in Wombat</a>.', $this->getFlowsUrl()) ?></em>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Sellry_Wombat</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL</license>
     <channel>community</channel>
@@ -10,9 +10,9 @@
     <description>Gone are the days of generic pre-packaged or slowly-built custom integrations! By connecting Magento to Wombat, you can have all your ecommerce data (orders, inventory, shipments, customers and products) flowing through a single hub, easily connected to your other apps for updating. What's more, Wombat's powerful, easy-to-understand interface lets you setup flows; for sending and retrieving data in a matter of clicks. The possibilities are nearly endless!</description>
     <notes>Enjoy!</notes>
     <authors><author><name>Sellry</name><user>sellry</user><email>sales@sellry.com</email></author></authors>
-    <date>2014-09-16</date>
-    <time>21:21:06</time>
-    <contents><target name="magecommunity"><dir name="Sellry"><dir name="Wombat"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Hint.php" hash="daf807032a2350581e9383df093574b9"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="f7c1a665955db1406006c3f32f160355"/><dir name="Entity"><file name="Customer.php" hash="8d218c05b3c6f280f1a749428fef556f"/><file name="Order.php" hash="204a869f31e8d4f2f03d2566aa23f739"/><file name="Product.php" hash="8563018fcddc0c4245f651b39dd48352"/></dir></dir><dir name="Model"><file name="Connection.php" hash="080080ac8848d3b88831425ba7074cd5"/><dir name="Observer"><file name="Abstract.php" hash="86905ae68e26102370830f26a66c9d9c"/><file name="Customer.php" hash="ecfe964dc236ad94e4395b069f38626d"/><file name="Order.php" hash="06ff26b38fd72a69eb558b9d81ebf4ef"/><file name="Product.php" hash="ab2a1b2e09e8c3232e897dfd6e18b3fb"/></dir><dir name="Observers"><file name="Customer.php" hash="6e3ad69473d2add5feb8d83955d77bc3"/></dir></dir><dir name="etc"><file name="config.xml" hash="92deaf9050bf319828f12916deefd6bb"/><file name="system.xml" hash="fb48a38bb4a239d6f1dddcf544807cee"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Sellry_Wombat.xml" hash="a849ca14e0afa0fdbd7d1358a4c477ad"/></dir></target></contents>
+    <date>2014-09-17</date>
+    <time>03:53:53</time>
+    <contents><target name="magecommunity"><dir name="Sellry"><dir name="Wombat"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Hint.php" hash="daf807032a2350581e9383df093574b9"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="f7c1a665955db1406006c3f32f160355"/><dir name="Entity"><file name="Customer.php" hash="8d218c05b3c6f280f1a749428fef556f"/><file name="Order.php" hash="204a869f31e8d4f2f03d2566aa23f739"/><file name="Product.php" hash="8563018fcddc0c4245f651b39dd48352"/></dir></dir><dir name="Model"><file name="Connection.php" hash="080080ac8848d3b88831425ba7074cd5"/><dir name="Observer"><file name="Abstract.php" hash="86905ae68e26102370830f26a66c9d9c"/><file name="Customer.php" hash="ecfe964dc236ad94e4395b069f38626d"/><file name="Order.php" hash="06ff26b38fd72a69eb558b9d81ebf4ef"/><file name="Product.php" hash="ab2a1b2e09e8c3232e897dfd6e18b3fb"/></dir><dir name="Observers"><file name="Customer.php" hash="6e3ad69473d2add5feb8d83955d77bc3"/></dir></dir><dir name="etc"><file name="config.xml" hash="383b8e8496d7436f1ab86a105368d033"/><file name="system.xml" hash="fb48a38bb4a239d6f1dddcf544807cee"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Sellry_Wombat.xml" hash="a849ca14e0afa0fdbd7d1358a4c477ad"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="sellry"><dir name="wombat"><dir name="system"><dir name="config"><dir name="fieldset"><file name="hint.phtml" hash="5531144623418ed5284fd8a93c7f0b05"/></dir></dir></dir></dir></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
