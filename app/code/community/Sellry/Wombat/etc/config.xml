@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!--
+ * Wombat Integration
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * Wombat
+ *
+ * @category   Sellry
+ * @package    Sellry_Wombat
+ * @copyright  Copyright (c) 2014 Sellry (http://sellry.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Michael Bower <sales@sellry.com>
+-->
+<config>
+    <modules>
+        <Sellry_Wombat>
+            <version>1.0.0</version>
+        </Sellry_Wombat>
+    </modules>
+    <global>
+        <models>
+            <wombat>
+                <class>Sellry_Wombat_Model</class>
+            </wombat>
+        </models>
+        <helpers>
+            <wombat>
+                <class>Sellry_Wombat_Helper</class>
+            </wombat>
+        </helpers>
+        <blocks>
+            <wombat>
+              <class>Sellry_Wombat_Block</class>
+            </wombat>
+        </blocks>
+        <events>
+            <catalog_product_save_after>
+                <observers>
+                    <wombat_observer_product>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Product</class>
+                        <method>productSaved</method>
+                    </wombat_observer_product>
+                </observers>
+            </catalog_product_save_after>
+            <customer_save_after>
+                <observers>
+                    <wombat_observer_customer>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Customer</class>
+                        <method>customerSaved</method>
+                    </wombat_observer_customer>
+                </observers>
+            </customer_save_after>
+            <customer_address_validation_after>
+                <observers>
+                    <wombat_observer_customer_address>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Customer</class>
+                        <method>customerAddressValidation</method>
+                    </wombat_observer_customer_address>
+                </observers>
+            </customer_address_validation_after>
+            <sales_order_place_after>
+                <observers>
+                    <wombat_observer_sales_order>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Order</class>
+                        <method>orderPlaced</method>
+                    </wombat_observer_sales_order>
+                </observers>
+            </sales_order_place_after>
+            <order_cancel_after>
+                <observers>
+                    <wombat_observer_order_cancel>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Order</class>
+                        <method>orderCanceled</method>
+                    </wombat_observer_order_cancel>
+                </observers>
+            </order_cancel_after>
+            <sales_order_payment_pay>
+                <observers>
+                    <wombat_observer_order_cancel>
+                        <type>singleton</type>
+                        <class>Sellry_Wombat_Model_Observer_Order</class>
+                        <method>paymentPayed</method>
+                    </wombat_observer_order_cancel>
+                </observers>
+            </sales_order_payment_pay>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <wombat>
+                <use>standard</use>
+                <args>
+                    <module>Sellry_Wombat</module>
+                    <frontName>wombat</frontName>
+                </args>
+            </wombat>
+        </routers>
+        <translate>
+            <modules>
+                <Sellry_Wombat>
+                    <files>
+                        <default>Sellry_Wombat.csv</default>
+                    </files>
+                </Sellry_Wombat>
+            </modules>
+        </translate>
+    </frontend>
+    <admin>
+         <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <wombat after="Mage_Adminhtml">Sellry_Wombat</wombat>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Sellry_Wombat>
+                    <files>
+                        <default>Sellry_Wombat.csv</default>
+                    </files>
+                </Sellry_Wombat>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <wombat translate="title" module="wombat">
+                                            <title>Wombat Settings</title>
+                                        </wombat>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <wombat>
+            <settings>
+                <enabled>0</enabled>
+            </settings>
+        </wombat>
+    </default>
+</config>

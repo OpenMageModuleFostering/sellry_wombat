@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Sellry_Wombat>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Sellry_Wombat>
+  </modules>
+</config>
