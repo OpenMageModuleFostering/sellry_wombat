@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Sellry_Wombat",
+    "name": "OpenMageModuleFostering\/Sellry_Wombat",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
     "description": "Sync your Magento data with other apps and APIs by connecting to Wombat - the Operating System for Ecommerce.",
     "authors": [
-    {
-        "name": "Sellry",
-        "email": "sales@sellry.com"
-    }
-],
+        {
+            "name": "Sellry",
+            "email": "sales@sellry.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
